@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import { Button } from '@/shadcn/ui/button';
 import {
@@ -43,12 +44,19 @@ const submit = () => {
             {{ status }}
         </div>
 
+        <div>
+            <Link href="/">
+                <ApplicationLogo
+                    class="w-20 h-20 mb-12 fill-current text-foreground"
+                />
+            </Link>
+        </div>
         <Card class="w-[400px]">
             <CardHeader class="pt-4">
-                <CardTitle class="text-center text-2xl font-thin"
+                <CardTitle class="text-2xl font-thin text-center"
                     >Login</CardTitle
                 >
-                <CardDescription class="text-center font-thin"
+                <CardDescription class="font-thin text-center"
                     >Enter your username and password to login to your
                     account.</CardDescription
                 >
@@ -86,14 +94,14 @@ const submit = () => {
                         />
                     </div>
 
-                    <div class="mt-4 block">
+                    <div class="block mt-4">
                         <label class="flex items-center">
                             <Checkbox
                                 name="remember"
                                 v-model:checked="form.remember"
                             />
                             <span
-                                class="ms-2 text-sm text-muted-foreground"
+                                class="text-sm ms-2 text-muted-foreground"
                                 >Remember me</span
                             >
                         </label>
@@ -103,7 +111,7 @@ const submit = () => {
                     <Link
                         v-if="canResetPassword"
                         :href="route('password.request')"
-                        class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800"
+                        class="text-sm text-gray-600 underline rounded-md hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800"
                     >
                         Forgot your password?
                     </Link>

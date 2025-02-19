@@ -5,14 +5,14 @@ module.exports = {
   darkMode: ["class"],
   safelist: ["dark"],
   prefix: "",
-  
+
   content: [
     "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
     "./storage/framework/views/*.php",
     "./resources/views/**/*.blade.php",
     "./resources/js/**/*.{ts,tsx,vue}",
   ],
-  
+
   theme: {
     container: {
       center: true,
@@ -21,7 +21,10 @@ module.exports = {
         "2xl": "1400px",
       },
     },
-    extend: {
+      extend: {
+          fontFamily: {
+              sf_pro: ['SF Pro Display', "sans-serif"],
+        },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

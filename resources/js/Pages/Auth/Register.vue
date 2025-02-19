@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import { Button } from '@/shadcn/ui/button';
 import {
@@ -34,12 +35,19 @@ const submit = () => {
     <GuestLayout>
         <Head title="Register" />
 
+        <div>
+            <Link href="/">
+                <ApplicationLogo
+                    class="w-20 h-20 mb-12 fill-current text-foreground"
+                />
+            </Link>
+        </div>
         <Card class="w-[400px]">
             <CardHeader class="pt-4">
-                <CardTitle class="text-center text-2xl font-thin"
+                <CardTitle class="text-2xl font-thin text-center"
                     >Register</CardTitle
                 >
-                <CardDescription class="text-center font-thin"
+                <CardDescription class="font-thin text-center"
                     >Create a new account to get started.</CardDescription
                 >
             </CardHeader>
@@ -111,7 +119,7 @@ const submit = () => {
                 <CardFooter class="flex justify-between pb-6">
                     <Link
                         :href="route('login')"
-                        class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800"
+                        class="text-sm text-gray-600 underline rounded-md hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800"
                     >
                         Already registered?
                     </Link>
